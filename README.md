@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Freaking News with Create-react-app
+This project uses APIs from [newsapi.org](https://https://newsapi.org/).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Main Features
+
+* User can see latest news when the page first loaded.
+* User can search for prefer articles by typing into input box.
+* User can find articles in between specific dates by inserting dates.
+* User can go to next page when reach the bottom of a page.
 
 ## Available Scripts
 
