@@ -1,7 +1,28 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 10px;
+  font-size: 20px;
 }
-
+.App input {
+  display: block;
+  margin: 10px;
+  margin-top: 5px;
+  padding: 15px 20px 10px 20px;
+  color: inherit;
+  width: 100%;
+  font-family: inherit;
+  font-size: var(--inputFontSize);
+  font-weight: inherit;
+  line-height: var(--inputLineHeight);
+  border: none;
+  border-radius: 0.4rem;
+  transition: box-shadow var(--transitionDuration);
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +56,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+.input-section {
+  border-bottom: 1px solid darkgrey;
+  padding-bottom: 10px;
+}
+
+.posts-section {
+  margin-top: 30px;
+  align-items: center;
+}
+.post {
+  border-bottom: 1px solid grey;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  cursor: pointer;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-around;
+}
+.divider {
+  background-color: black;
 }
