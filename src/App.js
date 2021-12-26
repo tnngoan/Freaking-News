@@ -1,13 +1,14 @@
 import axios from "axios";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import "./App.css";
+import truncate from "./utils/truncate";
 
 function App() {
   const typingTimeoutRef = useRef(null);
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
   const [posts, setPosts] = useState([]);
-  const KEY = process.env.API_KEY;
+  const KEY = `3adc9755f9c645c79404d9739bfc6326`;
 
   async function getNews(q) {
     let cancel;
@@ -21,7 +22,7 @@ function App() {
       .then((res) => {
         const news = res.data.articles;
         console.log("news", news);
-        setPosts((prevPosts) => [...prevPosts, ...news]);
+        setPosts(news);
         console.log("posts", posts);
       })
       .catch((e) => {
@@ -43,10 +44,6 @@ function App() {
     }, 500);
   };
 
-  useEffect(() => {
-    getNews(query);
-  }, []);
-
   return (
     <div className="App">
       <div className="input-section">
@@ -61,13 +58,20 @@ function App() {
         {posts.map((post) => {
           return (
             <div className="post" key={post}>
-              <h3>{post.title}</h3>
               <div className="card-content">
-                <img alt={post.title} src={post.urlToImage} />
-                <hr className="divider" />
-                <p>{post.description}</p>
+                <div className="img-box">
+                  <img
+                    alt={post.title}
+                    src={post.urlToImage}
+                    width="auto"
+                    height="200px"
+                  />
+                </div>
+                <div className="nowrap-text">
+                  <h3 className="ellipsis-text">{truncate(post.title)}</h3>
+                  <p>{post.description}</p>
+                </div>
               </div>
-              <div></div>
             </div>
           );
         })}

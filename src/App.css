@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   display: flex;
   flex-direction: column;
   position: -webkit-sticky;
@@ -10,11 +9,11 @@
 }
 .App input {
   display: block;
-  margin: 10px;
   margin-top: 5px;
-  padding: 15px 20px 10px 20px;
+  padding: 15px 0px 10px 0px;
   color: inherit;
-  width: 100%;
+  width: 80%;
+  padding-left: 20px;
   font-family: inherit;
   font-size: var(--inputFontSize);
   font-weight: inherit;
@@ -71,12 +70,32 @@
   padding-top: 30px;
   padding-bottom: 30px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 }
 
 .card-content {
   display: flex;
+  flex-grow: 1;
   justify-content: space-around;
 }
-.divider {
-  background-color: black;
+.img-box {
+  padding-right: 30px;
+  width: auto;
+  flex: 1;
+  align-items: end;
+
+}
+.nowrap-text p {
+  padding: 10px 30px;
+}
+.ellipsis-text {
+  text-overflow: ellipsis;
+}
+.nowrap-text {
+  width: 60%;
+  overflow: hidden;
+}
+.img-box img {
+  float: right;
 }
